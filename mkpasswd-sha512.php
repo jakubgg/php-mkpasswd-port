@@ -82,7 +82,7 @@ function getPassword()
 function generateHash($pass, $salt, $rounds = 5000, $hash_type = '$6$')
 {
     $rounds_str = ($rounds === 5000) ? '' : 'rounds=' . $rounds . '$';
-    echo crypt($pass, $hash_type . $rounds_str . $salt . '$') . "\n";
+    return crypt($pass, $hash_type . $rounds_str . $salt . '$') . "\n";
 }
 
 $password = getPassword();
